@@ -1,2 +1,11 @@
-<h1>This is the Help Page</h1>
-<p>Find me in app/views/static_pages/help.html.erb</p>
+<% provide(:title, 'Help Page') %>
+<!Doctype html>
+<html>
+	<head>
+		<title><%- yield(:title)%></title>
+	</head>
+	<body>
+		<h1>Help Page</h1>
+		<p>Find me in app/views/static_pages/help.html.erb</p>
+	</body>
+</html>

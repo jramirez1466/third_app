@@ -1,2 +1,11 @@
-<h1>StaticPages#home</h1>
-<p>This Sample App contect will make the test pass.</p>
+<% provide(:title, 'Home Page') %>
+<!Doctype html>
+<html>
+	<head>
+		<title><%- yield(:title)%></title>
+	</head>
+	<body>
+		<h1>Sample App</h1>
+		<p>This Sample App contect will makke the test pass.</p>
+	</body>
+</html>
