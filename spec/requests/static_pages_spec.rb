@@ -12,7 +12,7 @@ describe "StaticPages" do
       page.should have_selector("title", :text =>'Home Page')
     end
   end
-describe "Help page" do
+  describe "Help page" do
     it "should have the content Help Page" do
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
      visit '/static_pages/help'
@@ -30,7 +30,7 @@ describe "Help page" do
       page.should have_selector("h1", :text =>'About Us')
     end
     it "should have the title " do
-     visit '/static_pages/About'
+     visit '/static_pages/about'
       page.should have_selector("title", :text =>'About Page')
     end
   end
