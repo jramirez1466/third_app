@@ -1,4 +1,13 @@
 <% provide(:title, 'Home Page') %>
+	<div class-"center hero-unit">
+		<h1>Welcome to the Third App</h1>
+		<p>
+			This is the home page for the
+			<a href="http://railsin20minutes.org">Rails in 20</a>
+			Third sample application.
+		</p>
 
-		<h1>Sample App</h1>
-		<p>This Sample App contect will makke the test pass.</p>
+		<%- link_to "Sign up now!", '#', class: "btn btn-large btn-primary" %>
+	</div>
+
+	<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
