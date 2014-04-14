@@ -30,6 +30,10 @@ describe "StaticPages" do
     it { should have_selector("h1", text: 'Contact Us') }
     it { should have_selector("title", text:'Contact page') }
     end
+    it "should have the correct links" do
+      visit root_path
+      click_link "About"
+      page.should have_selector 'title', text: 'About us')
+      click_link "Help"
+      page.should have_selector 'title', text: 'Help')
   end
-
-end
