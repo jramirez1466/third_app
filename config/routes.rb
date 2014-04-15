@@ -1,5 +1,7 @@
 ThirdApp::Application.routes.draw do
   
+  get "users/new"
+
   match '/signup', to: 'users#new'
 
   match '/help', to: 'static_page#help'
