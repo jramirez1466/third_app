@@ -36,5 +36,12 @@ describe "when email is not present" do
     end
   end
 
-  
-end
+  describe "when email format is invalid" do
+    it "should be valid" do
+      addresses = %w[user@foo.com user@foo.jp example+me@foo.edu]
+      addresses.each do |valid_address|
+        @user.email = valid_address
+        @user.should be_valid
+    end
+    end
+  end
