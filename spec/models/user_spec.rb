@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe User do
   
-  before { @user = User.new(name: "Example User", email: "user@example.com")}  
+  before { @user = User.new(name: "Example User", email: "user@example.com")} 
+    password: "fubar", password_confirmation: "fubar") } 
   
   subject{ @user }
 
@@ -14,7 +15,7 @@ it { should respond_to(:password_confirmation)}
 
 it { should be_valid }
 
-describe "when name is not [resent" do
+describe "when name is not resent" do
   before { @user.name = " "}
   it { should_not be_vlid }
  end
@@ -58,5 +59,24 @@ describe "when email is not present" do
 
     it { should_not be_valid }
   end
+
+  describe "when password is not present" do
+   before { @user.password = @user.password_confirmation = " "}
+   it { should_not be_valid }
+  end
+
+  describe "when passwords mismatch" do
+   before { @user.password_confirmation = "mismatch"}
+   it {should_not be_valid}
+  end
+
+  describe "when confirmation is nil" do
+   before {@user.password_confirmation = nil}
+   it {should_not be_valid}
+end
+
+describe "when password is too small" do
+ before {@user.password = @user.password_confirmation = "a" * 4}
+ it {should_not be_valid}
 end
 
